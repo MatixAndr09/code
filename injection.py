@@ -6,7 +6,7 @@ libraries = ["socket","subprocess"]
 for library in libraries:
     os.system(f"pip install {library}")
 
-os.systme("cls")
+os.system("cls")
 
 import socket
 import grabber
