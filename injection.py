@@ -9,6 +9,7 @@ for library in libraries:
 os.system("cls")
 
 import secrets
+import requests
 random_string = "".join(
         secrets.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
         for _ in range(10)
